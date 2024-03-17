@@ -192,20 +192,18 @@ canvas {
   gap: 20px;
 }
 
-.post {
+.img-wrap {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
+  border: .2em solid #1515d8;
 }
 
-.post img {
+.img-wrap img {
   max-width: 100%;
   height: auto;
   display: block;
   border-radius: 5px;
 }
 
-.post:nth-child(3n) {
+.img-wrap:nth-child(3n) {
   grid-row: span 2;
 }

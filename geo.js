@@ -1,16 +1,10 @@
-console.log("alo p5");
-
 console.log(window.innerHeight, window.innerWidth);
-
-//new p5();
-
 let pg;
 
 let x = window.innerWidth;
 let y = window.innerHeight;
 
 function setup() {
-  console.log("setup fn");
   const canvas = createCanvas(
     window.innerWidth,
     window.innerHeight - window.innerHeight / 5.6
