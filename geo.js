@@ -70,13 +70,6 @@ function draw() {
     textAlign(CENTER, CENTER);
     text("projects", 780, 110);
 
-    // contact
-    //translate(0, 0);
-    let angle2 = radians(25);
-    rotate(angle2);
-    textAlign(CENTER, CENTER);
-    text("contact", 700, 400);
-
     //
     // Create a button and place it beneath the canvas.
     let buttonContacts = createButton("contact");
@@ -99,11 +92,11 @@ function draw() {
 
     // Rotate the text by radians
 
-    let angle4 = radians(5);
+    let angle4 = radians(15);
     rotate(angle4);
-    text("Hi, this is Kris ", 400, 100);
-    text("Balkan raised, Berlin-based", 250, 210);
-    text("designer and illustrator", 250, 240);
+    text("Hi, this is Kris ", 400, 200);
+    text("Balkan raised, Berlin-based", 480, 230);
+    text("designer and illustrator", 455, 260);
   }
 
   let check = isLooping();
