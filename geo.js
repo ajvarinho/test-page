@@ -5,10 +5,7 @@ let x = window.innerWidth;
 let y = window.innerHeight;
 
 function setup() {
-  const canvas = createCanvas(
-    window.innerWidth,
-    window.innerHeight - window.innerHeight / 5.6
-  );
+  const canvas = createCanvas(x, y - y / 5.6);
   canvas.parent("canvas");
   canvas.background(255);
 
@@ -25,24 +22,28 @@ function setup() {
 function draw() {
   background(255);
 
-  //Draw the offscreen buffer to the screen with image()
-  image(pg, 150, 75);
-
   if (window.innerWidth >= 1200) {
     //Projects triangle
     fill(22, 39, 220);
     triangle(350, 135, 1000, 5, 1045, 210);
 
+    //scale(mouseX / 300, mouseY / 300);
+
+    let testX = mouseX / 300;
+    let testY = mouseY / 300;
+
     //rectangle decorative
     push(); // Start a new drawing state
-    //translate(0, 0);
+    translate(mouseX, mouseY);
     fill(22, 39, 220);
     rotate(PI / 8.5);
     rect(200, 0, 920, 200);
+    //scale(mouseX / 300, mouseY / 300);
     pop(); // Restore original state
 
     //dot decorative
     fill(127, 255, 0);
+
     ellipse(265, 365, 90, 90);
 
     //rect deco
@@ -59,6 +60,8 @@ function draw() {
     //rect about
     fill(22, 39, 220);
     rect(1050, 0, 300, window.innerHeight);
+
+    //
 
     textSize(25);
     fill("limegreen");
@@ -124,7 +127,7 @@ function draw() {
     fill(22, 39, 220);
     triangle(35, 750, window.innerWidth, 500, 285, 750);
   }
-  noLoop();
+  //noLoop();
   console.log(mouseX, mouseY);
 }
 
