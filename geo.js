@@ -34,7 +34,7 @@ function draw() {
 
     //rectangle decorative
     push(); // Start a new drawing state
-    translate(mouseX, mouseY);
+    //translate(mouseX, mouseY);
     fill(22, 39, 220);
     rotate(PI / 8.5);
     rect(200, 0, 920, 200);
@@ -127,7 +127,7 @@ function draw() {
     fill(22, 39, 220);
     triangle(35, 750, window.innerWidth, 500, 285, 750);
   }
-  //noLoop();
+  noLoop();
   console.log(mouseX, mouseY);
 }
 
