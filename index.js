@@ -2,12 +2,14 @@
 let angle = 0;
 let x = window.innerWidth;
 let y = window.innerHeight;
+const canvasWrap = document.getElementById("canvas");
+let wrapHeight = canvasWrap.offsetHeight;
 
 let rectOneX = 920;
 let rectOneY = 200;
 
 function setup() {
-  const canvas = createCanvas(x, y - y / 5.6);
+  const canvas = createCanvas(x, wrapHeight);
   canvas.parent("canvas");
   canvas.background(255);
   //
@@ -52,14 +54,11 @@ function draw() {
     fill(22, 39, 220);
     triangle(350, 135, 1000, 5, 1045, 210);
 
-    //angle = 15;
-
-    // 'save' current and start a new drawing state
     push();
     translate(580, 300);
     rectMode(CENTER);
-    rotate(angle);
-    scale(mouseX / 1000, mouseY / 1000);
+    rotate(15);
+    //scale(mouseX / 1000, mouseY / 1000);
     fill(22, 39, 220);
     rect(0, 0, rectOneX, rectOneY);
     pop();
@@ -101,18 +100,16 @@ function draw() {
     buttonContacts.position(500, 600);
     buttonContacts.class("btn intro-btn contact");
 
-    // // about btn
-    // let buttonAbout = createButton("about me");
-    // buttonAbout.position(1200, 800);
-    // buttonAbout.class("btn intro-btn about");
-
     textSize(25);
+    strokeWeight(2);
+    fill("limegreen");
 
+    translate(400, 200);
     // Rotate the text by radians
-    rotate(angle);
-    text("Hi, this is Kris ", 400, 200);
-    text("Balkan raised, Berlin-based", 480, 230);
-    text("designer and illustrator", 455, 260);
+    rotate(10);
+    text("Hi, this is Kris ", 0, 0);
+    text("Balkan raised, Berlin-based", 0, 50);
+    text("designer and illustrator", 0, 90);
   }
 
   let check = isLooping();
@@ -122,29 +119,15 @@ function draw() {
     console.log("under construction");
   }
 
-  if (window.innerWidth < 500) {
+  if (window.innerWidth < 600) {
     fill(22, 39, 220);
     triangle(15, 180, window.innerWidth - 50, 5, window.innerWidth, 210);
     //
-    //rectangle decorative
-    push(); // Start a new drawing state
-    //translate(0, 0);
-    fill(22, 39, 220);
-    rotate(PI / 8.8);
-    rect(80, 180, window.innerWidth, 180);
-    pop(); // Restore original state
-    //
+
     fill(22, 39, 220);
     ellipse(100, 560, 150, 150);
     //
     fill(22, 39, 220);
     triangle(35, 750, window.innerWidth, 500, 285, 750);
   }
-  //noLoop();
-  console.log(mouseX, mouseY);
-}
-
-function windowResized() {
-  console.log("resize");
-  resizeCanvas(window.innerWidth, window.innerHeight - window.innerHeight / 5);
 }

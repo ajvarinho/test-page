@@ -26,7 +26,7 @@ h1 {
 
 .intro-wrap {
   position: relative;
-  height: 82vh;
+  height: 85vh;
 }
 
 #canvas {
@@ -70,7 +70,7 @@ canvas {
 
 .contact:active {
   border: 1px solid green;
-  background: linear-gradient(45deg, green, blue);
+  background: linear-gradient(45deg, rgb(73, 255, 27), rgb(59, 59, 244));
 }
 
 .intro-wrap > nav {
