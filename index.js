@@ -25,6 +25,28 @@ function setup() {
 function draw() {
   background(255);
 
+  //translate(0, innerHeight / 3);
+
+  // Set the noise level and scale.
+  let noiseLevel = 100;
+  let noiseScale = 0.005;
+
+  // Iterate from left to right.
+  for (let x = 0; x < innerWidth; x += 10) {
+    // Scale the input coordinates.
+    let nx = noiseScale * x;
+    let nt = noiseScale * frameCount;
+
+    // Compute the noise value.
+    let y = noiseLevel * noise(nx, nt) * 10;
+
+    // Draw the line.
+    stroke("blue");
+    line(x, 0, x, y);
+
+    //rotateTest(i);
+  }
+
   if (window.innerWidth >= 1200) {
     //Projects triangle
     fill(22, 39, 220);
