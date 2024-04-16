@@ -106,6 +106,22 @@ canvas {
 }
 
 /**/
+.canvas-bg-wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  border: .5em solid blue;
+  /**/
+  height: 100vh;
+}
+
+#canvas-bg {
+  position: absolute;
+  inset: 0;
+}
+
+/**/
 .flex-menu {
   height: 20vh;
   padding: 2em;
