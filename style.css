@@ -20,7 +20,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: black;
+  background-color: rgb(235, 234, 240);
 }
 
 h1 {
@@ -28,6 +28,7 @@ h1 {
   color: chartreuse;
   padding: .1em 0;
   padding-inline-start: .5em;
+  background-color: black;
 }
 
 .intro-wrap {
@@ -91,6 +92,8 @@ canvas {
   background-color: #66bb11;
   color: #3b3838;
   padding: 10px;
+  margin-top: .1em;
+  box-shadow: inset .2em .4em .5em -6px blue;
 }
 
 .ticker-content {
@@ -110,6 +113,7 @@ canvas {
   padding-inline-end: 4em;
   padding-top: 3em;
   background-color: transparent;
+  box-shadow: inset .2em .4em .5em -6px blue;
 }
 
 .content-wrap::before {

@@ -41,7 +41,7 @@ function setup() {
   instaLink.class("link insta");
 
   //
-  imgTest = createImage(430, 400);
+  imgTest = createImage(430, 300);
   imgTest.loadPixels();
   for (let x = 0; x < imgTest.width; x++) {
     for (let y = 0; y < imgTest.height; y++) {
@@ -98,7 +98,8 @@ function draw() {
     //rect deco
     fill(22, 39, 220);
     rect(100, 410, 400, 420);
-    image(imgTest, mouseX - img.width / 2, mouseY - img.height / 2);
+    //mouseX - img.width / 2, mouseY - img.height / 2
+    image(imgTest, 1400, 175);
 
     //Contact dot
     fill(22, 39, 220);
@@ -118,9 +119,9 @@ function draw() {
     // let dx = mouseX - img.width / 10 - offset;
     // offset += dx * easing;
     // tint(255, 127); // Display at half opacity
-    // image(img, offset, 0);
+    // image(img, offset - 100, 0);
 
-    textSize(25);
+    textSize(30);
     strokeWeight(2);
     fill("limegreen");
 
