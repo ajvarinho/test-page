@@ -106,19 +106,25 @@ canvas {
 }
 
 /**/
-.canvas-bg-wrap {
+
+.content {
   position: relative;
   top: 0;
   left: 0;
+  height: fit-content;
+}
 
-  border: .5em solid blue;
-  /**/
+.content-bg {
+  position: absolute;
+  inset: 0;
+  background:repeating-linear-gradient(0.25turn, blue, white 2px, white 10px, blue 1px);
   height: 100vh;
 }
 
-#canvas-bg {
+.content-wrap {
   position: absolute;
   inset: 0;
+  background-color: transparent;
 }
 
 /**/
@@ -127,6 +133,7 @@ canvas {
   padding: 2em;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1em;
 }
 
 .left, .right {

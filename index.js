@@ -82,7 +82,7 @@ function draw() {
 
     //rect about
     fill(22, 39, 220);
-    rect(1050, 0, 300, window.innerHeight);
+    rect(1050, 0, 400, window.innerHeight);
 
     angle = angle + 0.05;
     //TEXTZ
@@ -130,4 +130,25 @@ function draw() {
     fill(22, 39, 220);
     triangle(35, 750, window.innerWidth, 500, 285, 750);
   }
+
+  noLoop();
 }
+
+//
+const bgEl = document.querySelector(".content-bg");
+let zoom = 1;
+const ZOOM_SPEED = 10;
+let lastScrollTop = 0;
+window.addEventListener("scroll", function (e) {
+  //console.log("lol scroll", e.deltaY);
+  //
+  let scrollTop = document.documentElement.scrollTop;
+  let scrollAmount = scrollTop - lastScrollTop;
+  lastScrollTop = scrollTop;
+
+  console.log("aaaaa", lastScrollTop);
+
+  console.log("Scroll amount:", scrollAmount);
+  bgEl.style.height = `${lastScrollTop - 200}px`;
+  //bgEl.style = "";
+});
