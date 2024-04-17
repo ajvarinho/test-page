@@ -1,5 +1,5 @@
 //p5.js
-let angle = 0;
+let angle = 18;
 let x = window.innerWidth;
 let y = window.innerHeight;
 const canvasWrap = document.getElementById("canvas");
@@ -7,6 +7,15 @@ let wrapHeight = canvasWrap.offsetHeight;
 
 let rectOneX = 920;
 let rectOneY = 200;
+let img;
+let imgTest;
+//
+let offset = 0;
+let easing = 0.05;
+
+function preload() {
+  img = loadImage("assets/kris-img.jpg");
+}
 
 function setup() {
   const canvas = createCanvas(x, wrapHeight);
@@ -15,13 +24,32 @@ function setup() {
   //
   angleMode(DEGREES);
 
-  let projectsLink = createA("#menu", "projects");
+  let projectsLink = createA("#content", "projects");
   projectsLink.position(700, 150);
   projectsLink.class("link projects");
 
+  let contactLink = createA("", "contact");
+  contactLink.position(500, 650);
+  contactLink.class("link contact");
+
+  let aboutLink = createA("", "about");
+  aboutLink.position(1100, 750);
+  aboutLink.class("link about");
+
   let instaLink = createA("https://google.com", "instagram", "_blank");
-  instaLink.position(670, 730);
+  instaLink.position(670, 750);
   instaLink.class("link insta");
+
+  //
+  imgTest = createImage(430, 400);
+  imgTest.loadPixels();
+  for (let x = 0; x < imgTest.width; x++) {
+    for (let y = 0; y < imgTest.height; y++) {
+      let a = map(y, 0, imgTest.height, 255, 0);
+      imgTest.set(x, y, [22, 39, 220, a]);
+    }
+  }
+  imgTest.updatePixels();
 }
 
 function draw() {
@@ -50,66 +78,61 @@ function draw() {
   }
 
   if (window.innerWidth >= 1200) {
-    //Projects triangle
-    fill(22, 39, 220);
-    triangle(350, 135, 1000, 5, 1045, 210);
-
     push();
-    translate(580, 300);
+    translate(580, 320);
     rectMode(CENTER);
-    rotate(15);
-    //scale(mouseX / 1000, mouseY / 1000);
+    rotate(18);
+    //scale(mouseY / 1000, mouseX / 1000);
     fill(22, 39, 220);
     rect(0, 0, rectOneX, rectOneY);
     pop();
 
-    //rectOneX = rectOneX - 1;
-    //rectOneY = rectOneY - 10;
+    //Projects triangle
+    fill(22, 39, 220);
+    triangle(350, 135, 1000, 50, 1045, 210);
+
     //dot decorative
     fill(127, 255, 0);
-    ellipse(265, 365, 90, 90);
+    ellipse(250, 365, 90, 90);
 
     //rect deco
     fill(22, 39, 220);
-    rect(100, 410, 400, 520);
+    rect(100, 410, 400, 420);
+    image(imgTest, mouseX - img.width / 2, mouseY - img.height / 2);
 
     //Contact dot
     fill(22, 39, 220);
     ellipse(620, 580, 230, 230);
 
+    //trianle insta
     fill(22, 39, 220);
-    triangle(520, 750, 1045, 575, 885, 753);
+    triangle(520, 795, 1045, 575, 885, 795);
 
     //rect about
     fill(22, 39, 220);
-    rect(1050, 0, 400, window.innerHeight);
+    rect(1050, 50, 350, window.innerHeight - 100);
 
-    angle = angle + 0.05;
-    //TEXTZ
-    //
-    textSize(25);
-    fill("limegreen");
-
-    // projecs
-    // let angle = radians(-10); // Rotate by 45 degrees
-    textAlign(CENTER, CENTER);
-    text("projects", 780, 110);
-
-    // //contacts btn
-    let buttonContacts = createButton("contact");
-    buttonContacts.position(500, 600);
-    buttonContacts.class("btn intro-btn contact");
+    //image
+    // Draw the image.
+    image(img, 1100, 100, 400, 550);
+    // let dx = mouseX - img.width / 10 - offset;
+    // offset += dx * easing;
+    // tint(255, 127); // Display at half opacity
+    // image(img, offset, 0);
 
     textSize(25);
     strokeWeight(2);
     fill("limegreen");
 
     translate(400, 200);
-    // Rotate the text by radians
-    rotate(10);
+    rotate(angle);
+    textAlign(CENTER);
     text("Hi, this is Kris ", 0, 0);
     text("Balkan raised, Berlin-based", 0, 50);
     text("designer and illustrator", 0, 90);
+
+    fill(102, 187, 17);
+    rect(innerWidth - 50, 0, 50, innerHeight);
   }
 
   let check = isLooping();
@@ -130,25 +153,34 @@ function draw() {
     fill(22, 39, 220);
     triangle(35, 750, window.innerWidth, 500, 285, 750);
   }
+  angle = angle + 0.05;
 
-  noLoop();
+  console.log("angle", angle);
+
+  // if (angle >= 30) {
+  //   do {
+  //     angle = angle - 0.05;
+  //   } while (angle < 15);
+  // }
+
+  //noLoop();
 }
 
 //
-const bgEl = document.querySelector(".content-bg");
-let zoom = 1;
-const ZOOM_SPEED = 10;
-let lastScrollTop = 0;
-window.addEventListener("scroll", function (e) {
-  //console.log("lol scroll", e.deltaY);
-  //
-  let scrollTop = document.documentElement.scrollTop;
-  let scrollAmount = scrollTop - lastScrollTop;
-  lastScrollTop = scrollTop;
+// const bgEl = document.querySelector(".content-bg");
+// let zoom = 1;
+// const ZOOM_SPEED = 10;
+// let lastScrollTop = 0;
+// window.addEventListener("scroll", function (e) {
+//   //console.log("lol scroll", e.deltaY);
+//   //
+//   let scrollTop = document.documentElement.scrollTop;
+//   let scrollAmount = scrollTop - lastScrollTop;
+//   lastScrollTop = scrollTop;
 
-  console.log("aaaaa", lastScrollTop);
+//   console.log("aaaaa", lastScrollTop);
 
-  console.log("Scroll amount:", scrollAmount);
-  bgEl.style.height = `${lastScrollTop - 200}px`;
-  //bgEl.style = "";
-});
+//   console.log("Scroll amount:", scrollAmount);
+//   bgEl.style.height = `${lastScrollTop - 200}px`;
+//   //bgEl.style = "";
+// });

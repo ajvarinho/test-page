@@ -5,10 +5,11 @@
 html { scroll-behavior: smooth; }
 
 body {
+  font-family: monospace;
     font-size: 1.125rem;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: rgb(203, 196, 196);
+    background-color: rgb(242, 249, 241);
 }
 
 a {
@@ -16,12 +17,17 @@ a {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background-color: black;
 }
 
 h1 {
   margin: 0;
   color: chartreuse;
+  padding: .1em 0;
+  padding-inline-start: .5em;
 }
 
 .intro-wrap {
@@ -35,11 +41,13 @@ h1 {
   left: 0;
   bottom: 0;
   right: 0;
+
 }
 
 canvas {
   height: 100%;
   width: 100%;
+  border-right: 2.5em solid #66bb11;
 }
 
 .link {
@@ -47,30 +55,21 @@ canvas {
   color: rgb(15, 225, 53);
   font-size: 1.8em;
   background-color: transparent;
+  /**/
+  transition-duration: .5s;
 }
 
 .insta {
-  transform: rotateZ(-15deg);
-}
-
-
-.btn {
-  font-size: 1.8em;
-  padding: 1em;
-  border: none;
-  background: transparent;
+  transform: rotateZ(-24deg);
 }
 
 .contact {
-  height: 7em;
-  width: 7em;
-  border-radius: 50%;
+  transition-duration: .5s;
   transform: translateX(7px) translateY(-50px) rotateZ(17deg);
 }
 
-.contact:active {
-  border: 1px solid green;
-  background: linear-gradient(45deg, rgb(73, 255, 27), rgb(59, 59, 244));
+.link:active {
+  transform: translateX(7px) translateY(-50px) translateZ(-4px);
 }
 
 .intro-wrap > nav {
@@ -85,7 +84,6 @@ canvas {
   color: greenyellow;
 }
 
-/**/
 .ticker-container {
   overflow: hidden;
   white-space: nowrap;
@@ -97,47 +95,49 @@ canvas {
 
 .ticker-content {
   display: inline-block;
-  animation: ticker-scroll 10s linear infinite;
+  animation: ticker-scroll 15s linear infinite;
 }
 
+
 @keyframes ticker-scroll {
-  0% { transform: translateX(300%); }
+  0% { transform: translateX(200%); }
   100% { transform: translateX(-100%); }
 }
 
-/**/
-
-.content {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: fit-content;
-}
-
-.content-bg {
-  position: absolute;
-  inset: 0;
-  background:repeating-linear-gradient(0.25turn, blue, white 2px, white 10px, blue 1px);
-  height: 100vh;
-}
-
 .content-wrap {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  padding-inline-start: 4em;
+  padding-inline-end: 4em;
+  padding-top: 3em;
   background-color: transparent;
 }
 
-/**/
+.content-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:repeating-linear-gradient(0.25turn, blue, white 2px, white 10px, blue 1px);
+  z-index: -1;
+  opacity: 0.1;
+}
+
 .flex-menu {
-  height: 20vh;
-  padding: 2em;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1em;
+  margin-top: 3em;
+  padding-inline-start: 1em;
 }
 
 .left, .right {
+  display: inline-block;
+  padding-top: 1em;
   color: blue;
+}
+
+.left > h2 {
+  margin: 0;
+  font-size: 3em;
+
 }
 
 .project-list {
@@ -207,12 +207,12 @@ canvas {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  border-left: 1em solid #66bb11;
+  padding-left: 1em;
 }
 
 .img-wrap {
@@ -229,4 +229,18 @@ canvas {
 
 .img-wrap:nth-child(3n) {
   grid-row: span 2;
+}
+
+footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  height: fit-content;
+  width: 100%;
+  line-height: 2.2em;
+  text-align: center;
+  background-color: black;
+  color: #66bb11;
+  font-size: 1.2em;
 }
