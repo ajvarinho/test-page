@@ -41,7 +41,7 @@ function setup() {
   instaLink.class("link insta");
 
   //
-  imgTest = createImage(430, 300);
+  imgTest = createImage(455, 300);
   imgTest.loadPixels();
   for (let x = 0; x < imgTest.width; x++) {
     for (let y = 0; y < imgTest.height; y++) {
