@@ -107,7 +107,7 @@ function draw() {
 
     //trianle insta
     fill(22, 39, 220);
-    triangle(520, 795, 1045, 575, 885, 795);
+    triangle(520, 797, 1045, 575, 885, 797);
 
     //rect about
     fill(22, 39, 220);

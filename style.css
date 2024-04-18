@@ -154,10 +154,32 @@ li:hover {
   color: blue;
 }
 
-.left > h2 {
-  margin: 0;
+.project-title{
+  position: relative;
+  margin: 1em 0 0 0;
   font-size: 3em;
+}
 
+.project-title::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(3em) translateY(-1.5em);
+  background-color: rgb(121, 202, 23);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.project-title::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(8em) translateY(-2.5em);
+  background-color: rgb(121, 202, 23);
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .project-list {
