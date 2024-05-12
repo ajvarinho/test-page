@@ -139,6 +139,9 @@ li:hover {
   padding-top: 3em;
   background-color: transparent;
   box-shadow: inset .2em .4em .5em -6px blue;
+  /**/
+  display: flex;
+  gap: 2em;
 }
 
 .content-wrap::before {
@@ -194,6 +197,13 @@ li:hover {
 .project-list {
   color: blue;
   padding: 16px;
+}
+
+li {
+  width: 100%;
+  height: 5em;
+  border: .2em solid rgb(0, 13, 128);
+  border-radius: 12px;
 }
 
 /**/
@@ -255,7 +265,7 @@ li:hover {
 .container {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   border-left: 1em solid #66bb11;
   padding-left: 1em;

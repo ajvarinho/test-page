@@ -2,7 +2,7 @@ const backToTop = document.querySelector(".back-to-top");
 console.log("backToTop", backToTop);
 
 backToTop.addEventListener("click", () => {
-  document.body.scrollTop = 0;
+  window.scrollTo(0, 0);
   console.log("alo");
 });
 
@@ -70,20 +70,20 @@ function draw() {
   let noiseScale = 0.005;
 
   // Iterate from left to right.
-  for (let x = 0; x < innerWidth; x += 10) {
-    // Scale the input coordinates.
-    let nx = noiseScale * x;
-    let nt = noiseScale * frameCount;
+  // for (let x = 0; x < innerWidth; x += 10) {
+  //   // Scale the input coordinates.
+  //   let nx = noiseScale * x;
+  //   let nt = noiseScale * frameCount;
 
-    // Compute the noise value.
-    let y = noiseLevel * noise(nx, nt) * 10;
+  //   // Compute the noise value.
+  //   let y = noiseLevel * noise(nx, nt) * 10;
 
-    // Draw the line.
-    stroke("blue");
-    line(x, 0, x, y);
+  //   // Draw the line.
+  //   stroke("blue");
+  //   line(x, 0, x, y);
 
-    //rotateTest(i);
-  }
+  //   //rotateTest(i);
+  // }
 
   if (window.innerWidth >= 1200) {
     push();
@@ -95,30 +95,32 @@ function draw() {
     rect(0, 0, rectOneX, rectOneY);
     pop();
 
+    stroke(0);
+
     //Projects triangle
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     triangle(350, 135, 1000, 50, 1045, 210);
 
     //dot decorative
-    fill(127, 255, 0);
+    //fill(127, 255, 0);
     ellipse(250, 365, 90, 90);
 
     //rect deco
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     rect(100, 410, 400, 420);
     //mouseX - img.width / 2, mouseY - img.height / 2
     image(imgTest, 1400, 175);
 
     //Contact dot
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     ellipse(620, 580, 230, 230);
 
     //trianle insta
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     triangle(520, 797, 1045, 575, 885, 797);
 
     //rect about
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     rect(1050, 50, 350, window.innerHeight - 100);
 
     //image
@@ -131,7 +133,7 @@ function draw() {
 
     textSize(30);
     strokeWeight(2);
-    fill("limegreen");
+    //fill("limegreen");
 
     translate(400, 200);
     rotate(angle);
@@ -140,7 +142,7 @@ function draw() {
     text("Balkan raised, Berlin-based", 0, 50);
     text("designer and illustrator", 0, 90);
 
-    fill(102, 187, 17);
+    //fill(102, 187, 17);
     rect(innerWidth - 50, 0, 50, innerHeight);
   }
 
