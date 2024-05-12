@@ -1,3 +1,11 @@
+const backToTop = document.querySelector(".back-to-top");
+console.log("backToTop", backToTop);
+
+backToTop.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  console.log("alo");
+});
+
 //p5.js
 let angle = 18;
 let x = window.innerWidth;
@@ -156,7 +164,7 @@ function draw() {
   }
   angle = angle + 0.05;
 
-  console.log("angle", angle);
+  //console.log("angle", angle);
 
   // if (angle >= 30) {
   //   do {
