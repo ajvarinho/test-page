@@ -1,12 +1,28 @@
+/**
+ * show/hide back to top button
+ * returns @void
+ */
+
 const backToTop = document.querySelector(".back-to-top");
-console.log("backToTop", backToTop);
+
+document.addEventListener("scroll", () => {
+  let scrollTop = document.documentElement.scrollTop;
+  console.log(scrollTop);
+  if (scrollTop > 50) {
+    backToTop.classList.remove("hidden");
+  } else {
+    backToTop.classList.add("hidden");
+  }
+});
 
 backToTop.addEventListener("click", () => {
   window.scrollTo(0, 0);
-  console.log("alo");
 });
 
-//p5.js
+/**
+ * p5.js dirty layout
+ */
+
 let angle = 18;
 let x = window.innerWidth;
 let y = window.innerHeight;
@@ -91,7 +107,7 @@ function draw() {
     rectMode(CENTER);
     rotate(18);
     //scale(mouseY / 1000, mouseX / 1000);
-    fill(22, 39, 220);
+    //fill(22, 39, 220);
     rect(0, 0, rectOneX, rectOneY);
     pop();
 
@@ -136,7 +152,7 @@ function draw() {
     //fill("limegreen");
 
     translate(400, 200);
-    rotate(angle);
+    //rotate(angle);
     textAlign(CENTER);
     text("Hi, this is Kris ", 0, 0);
     text("Balkan raised, Berlin-based", 0, 50);
@@ -166,32 +182,25 @@ function draw() {
   }
   angle = angle + 0.05;
 
-  //console.log("angle", angle);
-
-  // if (angle >= 30) {
-  //   do {
-  //     angle = angle - 0.05;
-  //   } while (angle < 15);
-  // }
-
-  //noLoop();
+  noLoop();
 }
 
-//
-// const bgEl = document.querySelector(".content-bg");
-// let zoom = 1;
-// const ZOOM_SPEED = 10;
-// let lastScrollTop = 0;
-// window.addEventListener("scroll", function (e) {
-//   //console.log("lol scroll", e.deltaY);
-//   //
-//   let scrollTop = document.documentElement.scrollTop;
-//   let scrollAmount = scrollTop - lastScrollTop;
-//   lastScrollTop = scrollTop;
+/***
+ * Projects layout - desktop / mobile
+ */
 
-//   console.log("aaaaa", lastScrollTop);
+let bodyEl = document.querySelector("body");
+let bodyWidth = bodyEl.offsetWidth;
+let windowWidth = window.innerWidth;
+console.log("width", bodyEl, bodyWidth);
+let projectEl = document.querySelector(".project");
+let contentEl = document.querySelector(".project__wrap");
+let contentDesktopWrap = document.querySelector(".content-desktop");
+let mainWrap = document.querySelector(".content-wrap");
 
-//   console.log("Scroll amount:", scrollAmount);
-//   bgEl.style.height = `${lastScrollTop - 200}px`;
-//   //bgEl.style = "";
-// });
+if (bodyWidth > 600) {
+  let contentNode = projectEl.removeChild(contentEl);
+  contentDesktopWrap.appendChild(contentNode);
+} else {
+  mainWrap.classList.remove("desktop");
+}
