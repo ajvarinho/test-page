@@ -200,6 +200,7 @@ let mainWrap = document.querySelector(".content-wrap");
 
 if (bodyWidth > 600) {
   let contentNode = projectEl.removeChild(contentEl);
+  contentNode.classList.add("flex-menu");
   contentDesktopWrap.appendChild(contentNode);
 } else {
   mainWrap.classList.remove("desktop");
