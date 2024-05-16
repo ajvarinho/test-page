@@ -168,13 +168,13 @@ canvas {
   opacity: 0.1;
 } */
 
-.projects-heading {
+.heading {
   position: relative;
   margin: 0;
   text-align: end;
 }
 
-.projects-heading::before {
+.heading::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -184,7 +184,7 @@ canvas {
   z-index: -1;
 }
 
-.projects-heading::after {
+.heading::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -225,6 +225,7 @@ canvas {
   all: unset;
   padding: 1.5em 0;
   cursor: pointer;
+  width: 100%;
 }
 
 .project__desc {
