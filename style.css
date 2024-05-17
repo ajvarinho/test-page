@@ -203,26 +203,19 @@ canvas {
   overflow: hidden;
 }
 
-/* .project:active{
-  height: 80vh;
+.active {
+  height: 90vh;
   overflow: scroll;
-  background-color: skyblue;
-} */
+}
 
 .flex-menu {
   display: flex;
   justify-content: space-between;
 }
 
-.project__title{
-  height: 100%;
-  align-content: center;
-  text-align: center;
-  transition-duration: .7s;
-}
-
 .btn {
   all: unset;
+  text-align: center;
   padding: 1.5em 0;
   cursor: pointer;
   width: 100%;
@@ -238,6 +231,10 @@ canvas {
   gap: 1rem;
 }
 
+.project__wrap.mobile > .project__img-wrap {
+  grid-template-columns: 1fr;
+}
+
 .project__select {
   transition-duration: .7s;
 }
@@ -246,23 +243,23 @@ canvas {
   border-radius: 0 12em 12em 0;
 }
 
-.project__title:first-of-type:hover {
+.btn:first-of-type:hover {
   background-color: var(--projects-branding);
 }
 
-.project:nth-of-type(2) > .project__title:hover{
+.btn:nth-of-type(2) > .project__title:hover{
   background-color: var(--projects-posters);
 }
 
-.project:nth-of-type(3) > .project__title:hover{
+.btn:nth-of-type(3) > .project__title:hover{
   background-color: var(--projects-packaging);
 }
 
-.project:nth-of-type(4) > .project__title:hover{
+.btn:nth-of-type(4) > .project__title:hover{
   background-color: var(--projects-books);
 }
 
-.project:nth-of-type(5) > .project__title:hover{
+.btn:nth-of-type(5) > .project__title:hover{
   background-color: var(--projects-murals);
 }
 

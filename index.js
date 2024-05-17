@@ -37,153 +37,153 @@ let imgTest;
 let offset = 0;
 let easing = 0.05;
 
-// function preload() {
-//   img = loadImage("assets/kris-img.jpg");
-// }
+function preload() {
+  img = loadImage("assets/kris-img.jpg");
+}
 
-// function setup() {
-//   const canvas = createCanvas(x, wrapHeight);
-//   canvas.parent("canvas");
-//   canvas.background(255);
-//   //
-//   angleMode(DEGREES);
+function setup() {
+  const canvas = createCanvas(x, wrapHeight);
+  canvas.parent("canvas");
+  canvas.background(255);
+  //
+  angleMode(DEGREES);
 
-//   let projectsLink = createA("#content", "projects");
-//   projectsLink.position(700, 150);
-//   projectsLink.class("link projects");
+  let projectsLink = createA("#content", "projects");
+  projectsLink.position(700, 150);
+  projectsLink.class("link projects");
 
-//   let contactLink = createA("", "contact");
-//   contactLink.position(500, 650);
-//   contactLink.class("link contact");
+  let contactLink = createA("", "contact");
+  contactLink.position(500, 650);
+  contactLink.class("link contact");
 
-//   let aboutLink = createA("", "about");
-//   aboutLink.position(1100, 750);
-//   aboutLink.class("link about");
+  let aboutLink = createA("", "about");
+  aboutLink.position(1100, 750);
+  aboutLink.class("link about");
 
-//   let instaLink = createA("https://google.com", "instagram", "_blank");
-//   instaLink.position(670, 750);
-//   instaLink.class("link insta");
+  let instaLink = createA("https://google.com", "instagram", "_blank");
+  instaLink.position(670, 750);
+  instaLink.class("link insta");
 
-//   //
-//   imgTest = createImage(455, 300);
-//   imgTest.loadPixels();
-//   for (let x = 0; x < imgTest.width; x++) {
-//     for (let y = 0; y < imgTest.height; y++) {
-//       let a = map(y, 0, imgTest.height, 255, 0);
-//       imgTest.set(x, y, [22, 39, 220, a]);
-//     }
-//   }
-//   imgTest.updatePixels();
-// }
+  //
+  imgTest = createImage(455, 300);
+  imgTest.loadPixels();
+  for (let x = 0; x < imgTest.width; x++) {
+    for (let y = 0; y < imgTest.height; y++) {
+      let a = map(y, 0, imgTest.height, 255, 0);
+      imgTest.set(x, y, [22, 39, 220, a]);
+    }
+  }
+  imgTest.updatePixels();
+}
 
-// function draw() {
-//   background(255);
+function draw() {
+  background(255);
 
-//   //translate(0, innerHeight / 3);
+  //translate(0, innerHeight / 3);
 
-//   // Set the noise level and scale.
-//   let noiseLevel = 100;
-//   let noiseScale = 0.005;
+  // Set the noise level and scale.
+  let noiseLevel = 100;
+  let noiseScale = 0.005;
 
-//   // Iterate from left to right.
-//   // for (let x = 0; x < innerWidth; x += 10) {
-//   //   // Scale the input coordinates.
-//   //   let nx = noiseScale * x;
-//   //   let nt = noiseScale * frameCount;
+  // Iterate from left to right.
+  // for (let x = 0; x < innerWidth; x += 10) {
+  //   // Scale the input coordinates.
+  //   let nx = noiseScale * x;
+  //   let nt = noiseScale * frameCount;
 
-//   //   // Compute the noise value.
-//   //   let y = noiseLevel * noise(nx, nt) * 10;
+  //   // Compute the noise value.
+  //   let y = noiseLevel * noise(nx, nt) * 10;
 
-//   //   // Draw the line.
-//   //   stroke("blue");
-//   //   line(x, 0, x, y);
+  //   // Draw the line.
+  //   stroke("blue");
+  //   line(x, 0, x, y);
 
-//   //   //rotateTest(i);
-//   // }
+  //   //rotateTest(i);
+  // }
 
-//   if (window.innerWidth >= 1200) {
-//     push();
-//     translate(580, 320);
-//     rectMode(CENTER);
-//     rotate(18);
-//     //scale(mouseY / 1000, mouseX / 1000);
-//     //fill(22, 39, 220);
-//     rect(0, 0, rectOneX, rectOneY);
-//     pop();
+  if (window.innerWidth >= 1200) {
+    push();
+    translate(580, 320);
+    rectMode(CENTER);
+    rotate(18);
+    //scale(mouseY / 1000, mouseX / 1000);
+    //fill(22, 39, 220);
+    rect(0, 0, rectOneX, rectOneY);
+    pop();
 
-//     stroke(0);
+    stroke(0);
 
-//     //Projects triangle
-//     //fill(22, 39, 220);
-//     triangle(350, 135, 1000, 50, 1045, 210);
+    //Projects triangle
+    //fill(22, 39, 220);
+    triangle(350, 135, 1000, 50, 1045, 210);
 
-//     //dot decorative
-//     //fill(127, 255, 0);
-//     ellipse(250, 365, 90, 90);
+    //dot decorative
+    //fill(127, 255, 0);
+    ellipse(250, 365, 90, 90);
 
-//     //rect deco
-//     //fill(22, 39, 220);
-//     rect(100, 410, 400, 420);
-//     //mouseX - img.width / 2, mouseY - img.height / 2
-//     image(imgTest, 1400, 175);
+    //rect deco
+    //fill(22, 39, 220);
+    rect(100, 410, 400, 420);
+    //mouseX - img.width / 2, mouseY - img.height / 2
+    image(imgTest, 1400, 175);
 
-//     //Contact dot
-//     //fill(22, 39, 220);
-//     ellipse(620, 580, 230, 230);
+    //Contact dot
+    //fill(22, 39, 220);
+    ellipse(620, 580, 230, 230);
 
-//     //trianle insta
-//     //fill(22, 39, 220);
-//     triangle(520, 797, 1045, 575, 885, 797);
+    //trianle insta
+    //fill(22, 39, 220);
+    triangle(520, 797, 1045, 575, 885, 797);
 
-//     //rect about
-//     //fill(22, 39, 220);
-//     rect(1050, 50, 350, window.innerHeight - 100);
+    //rect about
+    //fill(22, 39, 220);
+    rect(1050, 50, 350, window.innerHeight - 100);
 
-//     //image
-//     // Draw the image.
-//     image(img, 1100, 100, 400, 550);
-//     // let dx = mouseX - img.width / 10 - offset;
-//     // offset += dx * easing;
-//     // tint(255, 127); // Display at half opacity
-//     // image(img, offset - 100, 0);
+    //image
+    // Draw the image.
+    image(img, 1100, 100, 400, 550);
+    // let dx = mouseX - img.width / 10 - offset;
+    // offset += dx * easing;
+    // tint(255, 127); // Display at half opacity
+    // image(img, offset - 100, 0);
 
-//     textSize(30);
-//     strokeWeight(2);
-//     //fill("limegreen");
+    textSize(30);
+    strokeWeight(2);
+    //fill("limegreen");
 
-//     translate(400, 200);
-//     //rotate(angle);
-//     textAlign(CENTER);
-//     text("Hi, this is Kris ", 0, 0);
-//     text("Balkan raised, Berlin-based", 0, 50);
-//     text("designer and illustrator", 0, 90);
+    translate(400, 200);
+    //rotate(angle);
+    textAlign(CENTER);
+    text("Hi, this is Kris ", 0, 0);
+    text("Balkan raised, Berlin-based", 0, 50);
+    text("designer and illustrator", 0, 90);
 
-//     //fill(102, 187, 17);
-//     rect(innerWidth - 50, 0, 50, innerHeight);
-//   }
+    //fill(102, 187, 17);
+    rect(innerWidth - 50, 0, 50, innerHeight);
+  }
 
-//   let check = isLooping();
+  let check = isLooping();
 
-//   if (window.innerWidth >= 800 && window.innerWidth < 1500) {
-//     //
-//     console.log("under construction");
-//   }
+  if (window.innerWidth >= 800 && window.innerWidth < 1500) {
+    //
+    console.log("under construction");
+  }
 
-//   if (window.innerWidth < 600) {
-//     fill(22, 39, 220);
-//     triangle(15, 180, window.innerWidth - 50, 5, window.innerWidth, 210);
-//     //
+  if (window.innerWidth < 600) {
+    fill(22, 39, 220);
+    triangle(15, 180, window.innerWidth - 50, 5, window.innerWidth, 210);
+    //
 
-//     fill(22, 39, 220);
-//     ellipse(100, 560, 150, 150);
-//     //
-//     fill(22, 39, 220);
-//     triangle(35, 750, window.innerWidth, 500, 285, 750);
-//   }
-//   angle = angle + 0.05;
+    fill(22, 39, 220);
+    ellipse(100, 560, 150, 150);
+    //
+    fill(22, 39, 220);
+    triangle(35, 750, window.innerWidth, 500, 285, 750);
+  }
+  angle = angle + 0.05;
 
-//   noLoop();
-// }
+  noLoop();
+}
 
 //
 let bodyEl = document.querySelector("body");
@@ -209,33 +209,46 @@ if (bodyWidth > 600) {
 
 console.log("is mobile", mobile);
 
-function createButton(obj) {
+function createProject(obj) {
   let projectWrap = document.createElement("div");
   projectWrap.setAttribute("class", "project");
   projectWrap.innerHTML = `
-    <div class="project__title">
-      <button id="${obj.id}" class="btn project__select">
-        ${obj.title}
-        <br/>>>
-      </button>
-    </div>
+    <button id="${obj.id}" class="btn project__select ${
+    mobile ? "mobile" : ""
+  }">
+      ${obj.title}
+      <br/>>>
+    </button>
   `;
   menuWrap.appendChild(projectWrap);
+
+  let projectContent = document.createElement("div");
+  projectContent.setAttribute(
+    "class",
+    `project__wrap ${mobile ? "mobile" : ""}`
+  );
+  projectContent.innerHTML = `
+  <p class="project__desc">${obj.desc}</p>
+  <div class="project__img-wrap">
+  <img src="./assets/image(1).png" alt="">
+  <img src="./assets/image(1).png" alt="">
+  <img src="./assets/image(1).png" alt="">
+  </div>
+  `;
+  if (mobile) {
+    projectWrap.appendChild(projectContent);
+  }
 }
 
 const setDataToElements = (arg) => {
   if (typeof arg === "object") {
     let projectsData = arg.data.projects;
     projectsData.forEach((obj) => {
-      createButton(obj);
+      createProject(obj);
     });
     //
     let buttonsArr = Array.from(document.querySelectorAll(".btn"));
-    buttonsArr.forEach((element, index) => {
-      // dodati klasu 'mobile' zobg active toggle kasnije
-      if (bodyWidth < 600) {
-        element.classList.add("mobile");
-      }
+    buttonsArr.forEach((element) => {
       element.addEventListener("click", function (evt) {
         openProject(evt, projectsData);
       });
@@ -246,18 +259,17 @@ const setDataToElements = (arg) => {
 
 function openProject(evt, arr) {
   let activeBtn = evt.target;
-  console.log(activeBtn, typeof activeBtn, "alo");
   let btnId = activeBtn.id;
   let activeProject = arr.find((element) => element.id === btnId);
-  //
-  openNewProject(activeProject, evt.target);
 
-  if (evt.target.classList.contains("mobile")) {
-    evt.target.parentNode.parentNode.classList.toggle("active");
+  if (mobile) {
+    evt.target.parentNode.classList.toggle("active");
+  } else {
+    startDesktop(activeProject, evt.target);
   }
 }
 
-function openNewProject(obj, obj2) {
+function startDesktop(obj) {
   if (document.querySelector(".project__wrap") === null) {
     let projectWrap = document.createElement("div");
     projectWrap.setAttribute("class", "project__wrap");
@@ -269,21 +281,8 @@ function openNewProject(obj, obj2) {
       <img src="./assets/image(1).png" alt="">
     </div>
     `;
-    let projectsArr = Array.from(document.querySelectorAll(".mobile"));
-    let test = [];
-    projectsArr.forEach((element) => {
-      test.push(element.parentNode.parentNode);
-    });
-    console.log(test);
-    // append created content to desktop
-    if (bodyWidth > 600) {
-      desktopWrap.appendChild(projectWrap);
-    } else {
-      //problem kod mobile je sto svaki project wrap treba svoj content, dok kod desktopa samo mijenjam vrijednosti na klik
-    }
-    //
+    desktopWrap.appendChild(projectWrap);
   } else {
-    //setContentToMobile();
     document.querySelector(".project__desc").innerHTML = obj.desc;
   }
 }
@@ -296,38 +295,3 @@ const fetchData = async () => {
 };
 
 fetchData();
-
-//brlja
-
-// console.log(obj2, "arg 2");
-// if (!obj2.classList.contains("mobile")) {
-//   desktopWrap.appendChild(projectWrap);
-// } else {
-//   console.log("contains mobile");
-//   let activeProjectNode = obj2.parentNode.parentNode;
-//   console.log(activeProjectNode, "paren");
-//   if (activeProjectNode.classList.contains("active")) {
-//     activeProjectNode.appendChild(projectWrap);
-//   }
-// }
-
-/***
- * Projects layout - desktop / mobile
- */
-
-//
-
-function setContentToMobile() {
-  let projectEl = document.querySelector(".project");
-  let contentEl = document.querySelector(".project__wrap");
-  let contentDesktopWrap = document.querySelector(".content-desktop");
-  let mainWrap = document.querySelector(".content-wrap");
-
-  if (bodyWidth > 600) {
-    let contentNode = projectEl.removeChild(contentEl);
-    contentNode.classList.add("flex-menu");
-    contentDesktopWrap.appendChild(contentNode);
-  } else {
-    mainWrap.classList.remove("desktop");
-  }
-}
