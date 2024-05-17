@@ -70,7 +70,7 @@ function setup() {
   for (let x = 0; x < imgTest.width; x++) {
     for (let y = 0; y < imgTest.height; y++) {
       let a = map(y, 0, imgTest.height, 255, 0);
-      imgTest.set(x, y, [22, 39, 220, a]);
+      imgTest.set(x, y, [85, 204, 71, a]);
     }
   }
   imgTest.updatePixels();
@@ -82,24 +82,6 @@ function draw() {
   //translate(0, innerHeight / 3);
 
   // Set the noise level and scale.
-  let noiseLevel = 100;
-  let noiseScale = 0.005;
-
-  // Iterate from left to right.
-  // for (let x = 0; x < innerWidth; x += 10) {
-  //   // Scale the input coordinates.
-  //   let nx = noiseScale * x;
-  //   let nt = noiseScale * frameCount;
-
-  //   // Compute the noise value.
-  //   let y = noiseLevel * noise(nx, nt) * 10;
-
-  //   // Draw the line.
-  //   stroke("blue");
-  //   line(x, 0, x, y);
-
-  //   //rotateTest(i);
-  // }
 
   if (window.innerWidth >= 1200) {
     push();
@@ -182,7 +164,7 @@ function draw() {
   }
   angle = angle + 0.05;
 
-  noLoop();
+  //noLoop();
 }
 
 //
